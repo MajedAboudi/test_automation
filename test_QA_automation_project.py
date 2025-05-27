@@ -14,7 +14,7 @@ import gc
 def driver():
     options = uc.ChromeOptions()
     options.add_argument('--start-maximized')
-    driver = uc.Chrome(options=options)
+    driver = uc.Chrome(options=options, version_main=136)
     driver.get('https://israelpost.co.il/')
     sleep(4)
     yield driver
