@@ -20,62 +20,62 @@ def driver():
     driver.quit()
 
 
-# def test_tc03(driver):
-#     '''Login with invalid password'''
-#
-#     username = "mohammadar03@gmail.com"
-#     password = "invalid_password"
-#
-#     # Click on login button
-#     driver.find_element("xpath", "/html/body/header/div[1]/div/div/div/div[3]/div[3]/div[3]/a[2]").click()
-#     sleep(1)
-#
-#     print("login Page")
-#
-#     # Enter username
-#     driver.find_element("xpath", "//*[@id='UserID']").send_keys(username)
-#
-#     # Enter password
-#     driver.find_element("xpath", "//*[@id='Password']").send_keys(password)
-#
-#     # Click login button
-#     driver.find_element("xpath", "//*[@id='login']/div[5]/button").click()
-#     sleep(1)
-#
-#     # Check for error message
-#     # Locate the error message element dynamically
-#     error_message_element = driver.find_element(
-#         "class name", "field-validation-error"
-#     )
-#     error_message = error_message_element.text
-#     assert error_message == "אחד או יותר מנתוני ההזדהות שהזנת אינם תקינים"
+def test_tc03(driver):
+    '''Login with invalid password'''
+
+    username = "mohammadar03@gmail.com"
+    password = "invalid_password"
+
+    # Click on login button
+    driver.find_element("xpath", "/html/body/header/div[1]/div/div/div/div[3]/div[3]/div[3]/a[2]").click()
+    sleep(1)
+
+    print("login Page")
+
+    # Enter username
+    driver.find_element("xpath", "//*[@id='UserID']").send_keys(username)
+
+    # Enter password
+    driver.find_element("xpath", "//*[@id='Password']").send_keys(password)
+
+    # Click login button
+    driver.find_element("xpath", "//*[@id='login']/div[5]/button").click()
+    sleep(1)
+
+    # Check for error message
+    # Locate the error message element dynamically
+    error_message_element = driver.find_element(
+        "class name", "field-validation-error"
+    )
+    error_message = error_message_element.text
+    assert error_message == "אחד או יותר מנתוני ההזדהות שהזנת אינם תקינים"
 
 
 
-# def test_tc04(driver):
-#
-#     login_page = driver.find_element(By.CLASS_NAME, 'main-login-button.to-login-area.userAnonymous')
-#     login_page.click()
-#
-#     sleep(3)
-#
-#     username = driver.find_element(By.ID, 'UserID')
-#     username.send_keys('')
-#
-#     password = driver.find_element(By.ID, 'Password')
-#     password.send_keys('')
-#
-#     driver.execute_script("document.body.style.zoom='80%'")
-#     login_btn = driver.find_element(By.XPATH, "//button[@type='submit']")
-#     login_btn.click()
-#     sleep(3)
-#     user_error = driver.find_element(By.ID,'UserID-error')
-#     assert user_error.text == 'חובה להזין מספר ת.ז או מייל', 'Error'
-#
-#     pass_error = driver.find_element(By.ID,'Password-error')
-#     assert pass_error.text == 'חובה להזין סיסמא', 'Error'
-#
-#     sleep(2)
+def test_tc04(driver):
+
+    login_page = driver.find_element(By.CLASS_NAME, 'main-login-button.to-login-area.userAnonymous')
+    login_page.click()
+
+    sleep(3)
+
+    username = driver.find_element(By.ID, 'UserID')
+    username.send_keys('')
+
+    password = driver.find_element(By.ID, 'Password')
+    password.send_keys('')
+
+    driver.execute_script("document.body.style.zoom='80%'")
+    login_btn = driver.find_element(By.XPATH, "//button[@type='submit']")
+    login_btn.click()
+    sleep(3)
+    user_error = driver.find_element(By.ID,'UserID-error')
+    assert user_error.text == 'חובה להזין מספר ת.ז או מייל', 'Error'
+
+    pass_error = driver.find_element(By.ID,'Password-error')
+    assert pass_error.text == 'חובה להזין סיסמא', 'Error'
+
+    sleep(2)
 #
 # def test_tc05(driver):
 #
