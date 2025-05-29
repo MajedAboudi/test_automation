@@ -1,4 +1,5 @@
 import os
+import random
 from time import sleep
 import pytest
 import undetected_chromedriver as uc
@@ -1082,7 +1083,7 @@ def test_tc51(driver):
     assert login_title.text == 'התחברות',"digital letter button is not working!!"
 
 
-def test_tc52(driver):
+def test_tc53(driver):
 
     menu_btn = driver.find_element(By.XPATH, '//img[@class="menu-hamburger menu-hamburger-open"]')
     menu_btn.click()
@@ -1091,11 +1092,11 @@ def test_tc52(driver):
     actions = ActionChains(driver)
     actions.move_to_element(country_post).perform()
     sleep(3)
-    fast_reg_btn = driver.find_element(By.XPATH,'/html/body/header/div[1]/nav/div[1]/div/div[3]/div[1]/ul[1]/li[2]/a')
-    fast_reg_btn.click()
-    sleep(2)
-    login_title = driver.find_element(By.XPATH,'/html/body/div[2]/div[1]/div[4]/div[3]/div[2]')
+    registered_mail_btn = driver.find_element(By.XPATH,'/html/body/header/div[1]/nav/div[1]/div/div[3]/div[1]/ul[1]/li[3]/a')
+    registered_mail_btn.click()
     sleep(3)
-    assert login_title.text == 'התחברות',"fast registration button is not working!!"
+    registered_mail_page = driver.find_element(By.XPATH,'/html/body/div[1]/div/div/div/div/h1')
+    sleep(3)
+    assert registered_mail_page.text == 'משלוח דואר רשום בארץ',"registered mail button is not working!!"
 
 
