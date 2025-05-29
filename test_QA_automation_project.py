@@ -278,6 +278,7 @@ Should allow it and show no errors
 
     # Click on sign up button /html/body/div[2]/div[1]/div[5]/div[6]/button
     sign_up_btn = driver.find_element(By.XPATH, "/html/body/div[2]/div[1]/div[5]/div[6]/button")
+    driver.execute_script("arguments[0].scrollIntoView(true);", sign_up_btn)
     sign_up_btn.click()
     sleep(1)
 
@@ -313,7 +314,9 @@ Should allow it and show no errors
     # sign up button /html/body/div[2]/div[1]/div[4]/div[4]/div[1]/form/div[7]/div[2]/div[5]/button
     sign_up_btn = driver.find_element(By.XPATH,
                                       "/html/body/div[2]/div[1]/div[4]/div[4]/div[1]/form/div[7]/div[2]/div[5]/button")
-    sign_up_btn.click()
+    # Used JavaScript Click to bypasses any UI interference.
+    driver.execute_script("arguments[0].click();", sign_up_btn)
+    # sign_up_btn.click()
     sleep(1)
     # Check for error message
     # Locate the error message element dynamically
@@ -345,6 +348,7 @@ Only accepts english and hebrew letter other than that will show an error
 
     # Click on sign up button /html/body/div[2]/div[1]/div[5]/div[6]/button
     sign_up_btn = driver.find_element(By.XPATH, "/html/body/div[2]/div[1]/div[5]/div[6]/button")
+    driver.execute_script("arguments[0].scrollIntoView(true);", sign_up_btn)
     sign_up_btn.click()
     sleep(1)
 
@@ -380,7 +384,9 @@ Only accepts english and hebrew letter other than that will show an error
     # sign up button /html/body/div[2]/div[1]/div[4]/div[4]/div[1]/form/div[7]/div[2]/div[5]/button
     sign_up_btn = driver.find_element(By.XPATH,
                                       "/html/body/div[2]/div[1]/div[4]/div[4]/div[1]/form/div[7]/div[2]/div[5]/button")
-    sign_up_btn.click()
+    # Used JavaScript Click to bypasses any UI interference.
+    driver.execute_script("arguments[0].click();", sign_up_btn)
+    # sign_up_btn.click()
     sleep(1)
 
     # Check for error message
@@ -1088,7 +1094,7 @@ def test_tc52(driver):
     fast_reg_btn = driver.find_element(By.XPATH,'/html/body/header/div[1]/nav/div[1]/div/div[3]/div[1]/ul[1]/li[2]/a')
     fast_reg_btn.click()
     sleep(2)
-    login_title = driver.find_element(By.XPATH,'//div[text()="התחברות"]')
+    login_title = driver.find_element(By.XPATH,'/html/body/div[2]/div[1]/div[4]/div[3]/div[2]')
     sleep(3)
     assert login_title.text == 'התחברות',"fast registration button is not working!!"
 
